@@ -18,6 +18,8 @@
   </tr>
 </table>
 
+由于原版的一些 js 和 css 通过国外 CDN 加载，导致加载速度较慢，所以我将其改为本地加载。 
+
 # 示例
 
 示例文档可在此处找到: https://softwarebrothers.github.io/example-design-system/index.html
