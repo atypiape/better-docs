@@ -4,7 +4,7 @@ var self = this;
 ?>
 <?js if (data.type && data.type.names) {?>
     <span class="method-parameter is-pulled-right">
-        <label>Type:</label>
+        <label>类型:</label>
         <?js= self.partial('type.tmpl', data.type.names) ?>
     </span>
 <?js } ?>
@@ -19,7 +19,7 @@ var self = this;
         <?js= name ?>
     </span>
     <?js if (data.optional) { ?>
-        <span class='tag'>Optional</span>
+        <span class='tag'>可选</span>
     <?js }; ?>
 </h4>
 
@@ -47,6 +47,6 @@ var self = this;
 <?js } ?>
 
 <?js if (data.examples && examples.length) { ?>
-    <h5>Example<?js= examples.length > 1? 's':'' ?></h5>
+    <h5>示例<?js= examples.length > 1? 's':'' ?></h5>
     <?js= this.partial('examples.tmpl', data) ?>
 <?js } ?>

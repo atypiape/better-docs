@@ -34,17 +34,17 @@
                     <?js }); ?>
                 </div>
                 <?js } ?>
-            <div class="navigation">
+            <div class="navigation" style="font-weight: bold">
                 <a
                     href="<?js= betterDocs.landing ? 'docs.html' : 'index.html' ?>"
                     class="link"
                 >
-                    <?js= betterDocs.navDocumentationLabel || 'Documentation' ?>
+                    <?js= betterDocs.navDocumentationLabel || '文档' ?>
                 </a>
                 <?js if (this.tutorials.length) { ?>
                 <div class="dropdown is-hoverable is-right">
                     <a class="dropdown-trigger link">
-                        Tutorials
+                        教程
                         <i class="fas fa-chevron-down fa-xs"></i>
                     </a>
                     <div class="dropdown-menu">

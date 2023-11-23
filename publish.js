@@ -396,15 +396,15 @@ function buildGroupNav (members, title) {
   if (title) {
     nav += '<h2>' + title + '</h2>'
   }
-  nav += buildMemberNav(members.tutorials || [], 'Tutorials', seenTutorials, linktoTutorial)
-  nav += buildMemberNav(members.modules || [], 'Modules', {}, linkto)
-  nav += buildMemberNav(members.externals || [], 'Externals', seen, linktoExternal)
-  nav += buildMemberNav(members.namespaces || [], 'Namespaces', seen, linkto)
-  nav += buildMemberNav(members.classes || [], 'Classes', seen, linkto)
-  nav += buildMemberNav(members.interfaces || [], 'Interfaces', seen, linkto)
-  nav += buildMemberNav(members.events || [], 'Events', seen, linkto)
-  nav += buildMemberNav(members.mixins || [], 'Mixins', seen, linkto)
-  nav += buildMemberNav(members.components || [], 'Components', seen, linkto)
+  nav += buildMemberNav(members.tutorials || [], '教程', seenTutorials, linktoTutorial)
+  nav += buildMemberNav(members.modules || [], '模块', {}, linkto)
+  nav += buildMemberNav(members.externals || [], '外部', seen, linktoExternal)
+  nav += buildMemberNav(members.namespaces || [], '命名空间', seen, linkto)
+  nav += buildMemberNav(members.classes || [], '类', seen, linkto)
+  nav += buildMemberNav(members.interfaces || [], '接口', seen, linkto)
+  nav += buildMemberNav(members.events || [], '事件', seen, linkto)
+  nav += buildMemberNav(members.mixins || [], '混合', seen, linkto)
+  nav += buildMemberNav(members.components || [], '组件', seen, linkto)
     
   if (members.globals && members.globals.length) {
     globalNav = ''
@@ -418,10 +418,10 @@ function buildGroupNav (members, title) {
 
     if (!globalNav) {
       // turn the heading into a link so you can actually get to the global page
-      nav += '<h3>' + linkto('global', 'Global') + '</h3>'
+      nav += '<h3>' + linkto('global', '全局') + '</h3>'
     }
     else {
-      nav += '<h3>Global</h3><ul>' + globalNav + '</ul>'
+      nav += '<h3>全局</h3><ul>' + globalNav + '</ul>'
     }
   }
   nav += '</div>'
@@ -445,7 +445,7 @@ function buildGroupNav (members, title) {
  */
 function buildNav(members, navTypes = null, betterDocs) {
   const href = betterDocs.landing ? 'docs.html' : 'index.html'
-  var nav = navTypes ? '' : `<h2><a href="${href}">Documentation</a></h2>`
+  var nav = navTypes ? '' : `<h2><a href="${href}">文档</a></h2>`
 
   var categorised = {}
   var rootScope = {}
@@ -721,13 +721,13 @@ exports.publish = function(taffyData, opts, tutorials) {
     generateSourceFiles(sourceFiles, opts.encoding)
   }
 
-  if (members.globals.length) { generate('Global', null, [{kind: 'globalobj'}], globalUrl) }
+  if (members.globals.length) { generate('全局', null, [{kind: 'globalobj'}], globalUrl) }
 
   // index page displays information from package.json and lists files
   files = find({kind: 'file'})
   packages = find({kind: 'package'})
 
-  generate('Home', '',
+  generate('首页', '',
     packages.concat(
       [{
         kind: 'mainpage',
@@ -755,31 +755,31 @@ exports.publish = function(taffyData, opts, tutorials) {
     var myComponents = helper.find(components, {longname: longname})
 
     if (myModules.length) {
-      generate(myModules[0].name, 'Module', myModules,  helper.longnameToUrl[longname])
+      generate(myModules[0].name, '模块', myModules,  helper.longnameToUrl[longname])
     }
 
     if (myClasses.length) {
-      generate(myClasses[0].name, 'Class', myClasses, helper.longnameToUrl[longname])
+      generate(myClasses[0].name, '类', myClasses, helper.longnameToUrl[longname])
     }
 
     if (myNamespaces.length) {
-      generate(myNamespaces[0].name, 'Namespace', myNamespaces, helper.longnameToUrl[longname])
+      generate(myNamespaces[0].name, '命名空间', myNamespaces, helper.longnameToUrl[longname])
     }
 
     if (myMixins.length) {
-      generate(myMixins[0].name, 'Mixin', myMixins, helper.longnameToUrl[longname])
+      generate(myMixins[0].name, '混合', myMixins, helper.longnameToUrl[longname])
     }
 
     if (myExternals.length) {
-      generate(myExternals[0].name, 'External', myExternals, helper.longnameToUrl[longname])
+      generate(myExternals[0].name, '外部', myExternals, helper.longnameToUrl[longname])
     }
 
     if (myInterfaces.length) {
-      generate(myInterfaces[0].name, 'Interface', myInterfaces, helper.longnameToUrl[longname])
+      generate(myInterfaces[0].name, '接口', myInterfaces, helper.longnameToUrl[longname])
     }
 
     if (myComponents.length) {
-      generate(myComponents[0].name, 'Components', myComponents, helper.longnameToUrl[longname])
+      generate(myComponents[0].name, '组件', myComponents, helper.longnameToUrl[longname])
     }
   })
 
@@ -804,7 +804,7 @@ exports.publish = function(taffyData, opts, tutorials) {
   // tutorials can have only one parent so there is no risk for loops
   function saveChildren(node) {
     node.children.forEach(function(child) {
-      generateTutorial(child.title, 'Tutorial', child, helper.tutorialToUrl(child.name))
+      generateTutorial(child.title, '教程', child, helper.tutorialToUrl(child.name))
       saveChildren(child)
     })
   }
@@ -815,7 +815,7 @@ exports.publish = function(taffyData, opts, tutorials) {
     const content = fs.readFileSync(conf.betterDocs.landing, 'utf8')
         
     var landingPageData = {
-      title: 'Home',
+      title: '首页',
       content,
     }
 

@@ -18,7 +18,7 @@ class Wrapper extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.toggleEditor = this.toggleEditor.bind(this)
     let { example } = props
-    example = example || 'return (<div>Example</div>)'
+    example = example || 'return (<div>示例</div>)'
     this.state = {
       example,
       height: 200,

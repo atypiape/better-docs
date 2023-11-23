@@ -14,7 +14,7 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
     if (properties && properties.length && properties.forEach && !data.hideconstructor) {
 ?>
 
-    <h5 class="subsection-title">Properties:</h5>
+    <h5 class="subsection-title">属性:</h5>
 
     <?js= this.partial('properties.tmpl', data) ?>
 
@@ -56,7 +56,7 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
     <?js } ?>
 
     <?js if (data.implements && data.implements.length) { ?>
-    <dt class="implements">Implements:</dt>
+    <dt class="implements">实现:</dt>
     <dd class="implements"><ul>
         <?js data.implements.forEach(function(impl) { ?>
             <li><?js= self.linkto(impl, self.htmlsafe(impl)) ?></li>
