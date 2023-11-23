@@ -1,9 +1,28 @@
 {
-  "name": "better-docs",
-  "version": "2.7.2.zh-cn.0",
+  "name": "better-docs-zh-cn",
+  "version": "2.7.2-zh-cn.1",
   "description": "JSdoc 汉化主题",
-  "repository": "github:atypiape/better-docs",
   "main": "publish.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atypiape/better-docs"
+  },
+  "keywords": [
+    "better-docs",
+    "jsdoc",
+    "zh-cn"
+  ],
+  "files": [
+    "lib",
+    "static",
+    "typescript",
+    "readme",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "gulp": "./node_modules/.bin/gulp",
     "test": "mocha --recursive './*spec.js' './typescript/*spec.js'",
