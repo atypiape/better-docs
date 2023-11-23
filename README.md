@@ -1,8 +1,8 @@
 <img src="./readme/logo.png" />
 
-Documentation toolbox for your **javascript** / **typescript** projects based on JSDoc3 with **@category**, **@component** and **@optional** plugins.
+基于 JSDoc3 的 **javascript** / **typescript** 项目的文档工具箱，带有 **@category**、**@component** 和 **@optional** 插件。
 
-This is how it looks:
+它长这样：
 
 <table>
   <tr>
@@ -18,42 +18,42 @@ This is how it looks:
   </tr>
 </table>
 
-# Example
+# 示例
 
-Example documentation can be found here: https://softwarebrothers.github.io/example-design-system/index.html
+示例文档可在此处找到: https://softwarebrothers.github.io/example-design-system/index.html
 
-# OpenSource SoftwareBrothers community
+# 开源社区 SoftwareBrothers
 
-- [Join the community](https://join.slack.com/t/adminbro/shared_invite/zt-czfb79t1-0U7pn_KCqd5Ts~lbJK0_RA) to get help and be inspired.
-- subscribe to our [newsletter](http://opensource.softwarebrothers.co)
+- [加入社区](https://join.slack.com/t/adminbro/shared_invite/zt-czfb79t1-0U7pn_KCqd5Ts~lbJK0_RA) 以获得帮助并获得灵感。
+- [订阅我们的邮件列表](http://opensource.softwarebrothers.co)
 
-# Installation
+# 安装
 
 ```sh
 npm install --save-dev better-docs
 ```
 
-# Theme Usage
+# 主题用法
 
-## With command line
+## 使用命令行
 
-Assuming that you have [jsdoc](https://github.com/jsdoc/jsdoc) installed globally:
+假设你已经全局安装了 [jsdoc](https://github.com/jsdoc/jsdoc):
 
-```
+```sh
 jsdoc your-documented-file.js -t ./node_modules/better-docs
 ```
 
-## With npm and configuration file
+## 使用 npm 和配置文件
 
-In your projects package.json file - add a new script:
+在你项目中的 package.json 文件，添加一个新脚本：
 
-```
+``` json
 "script": {
   "docs": "jsdoc -c jsdoc.json"
 }
 ```
 
-in your `jsdoc.json` file, set the template:
+在你的 `jsdoc.json` 文件中，设置模板：
 
 ```json
 "opts": {
@@ -61,15 +61,15 @@ in your `jsdoc.json` file, set the template:
 }
 ```
 
-# TypeScript support
+# TypeScript 支持
 
-better-docs has a plugin which allows you to generate documentation from your TypeScript codebase.
+better-docs 有一个插件，允许您从 TypeScript 代码生成文档。
 
-## Usage
+## 用法
 
-To use it update your `jsdoc.json` file
+更新您的 `jsdoc.json` 文件：
 
-```
+```json
 ...
 "tags": {
     "allowUnknownTags": ["optional"] //or true
@@ -83,7 +83,7 @@ To use it update your `jsdoc.json` file
 ...
 ```
 
-And now you can run your `jsdoc` command and parse TypeScript files.
+现在，您可以运行命令 `jsdoc` 并解析 TypeScript 文件。
 
 ## How it works?
 
