@@ -107,7 +107,7 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
         </ul></dd>
     <?js } ?>
     <?js if (data.tutorials && tutorials.length) {?>
-    <dt class="tag-tutorial">Tutorials:</dt>
+    <dt class="tag-tutorial">教程:</dt>
     <dd class="tag-tutorial">
         <ul><?js tutorials.forEach(function(t) { ?>
             <li><?js= self.tutoriallink(t) ?></li>
@@ -135,7 +135,7 @@ if (data.defaultvalue && (data.defaultvaluetype === 'object' || data.defaultvalu
 
     <?js if (data.meta && self.outputSourceFiles) {?>
         <p class="tag-source">
-            <?js= self.linkto(meta.shortpath, 'View Source', 'button') ?>
+            <?js= self.linkto(meta.shortpath, '查看源码', 'button') ?>
             <span>
                 <?js= self.linkto(meta.shortpath) ?>, <?js= self.linkto(meta.shortpath, 'line ' + meta.lineno, null, 'line' + meta.lineno) ?>
             </span>

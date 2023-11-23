@@ -32,7 +32,7 @@ function tutoriallink(tutorial) {
   return helper.toTutorial(tutorial, null, {
     tag: 'em',
     classname: 'disabled',
-    prefix: 'Tutorial: '
+    prefix: '教程: '
   })
 }
 
@@ -268,7 +268,7 @@ function generateSourceFiles(sourceFiles, encoding) {
       logger.error('Error while generating source file %s: %s', file, e.message)
     }
 
-    generate(sourceFiles[file].shortened, 'Source', [source], sourceOutfile,
+    generate(sourceFiles[file].shortened, '源码', [source], sourceOutfile,
       false)
   })
 }
