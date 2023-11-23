@@ -19,9 +19,12 @@
   ],
   "files": [
     "bundler.js",
+    "category.js",
+    "component.js",
     "lib",
     "static",
     "tmpl",
+    "typedef-import.js",
     "typescript",
     "typescript.js",
     "readme",
