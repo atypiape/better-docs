@@ -30,7 +30,7 @@
 # 安装
 
 ```sh
-npm install --save-dev better-docs
+npm install --save-dev better-docs-zh
 ```
 
 # 主题用法
@@ -40,7 +40,7 @@ npm install --save-dev better-docs
 假设你已经全局安装了 [jsdoc](https://github.com/jsdoc/jsdoc):
 
 ```sh
-jsdoc your-documented-file.js -t ./node_modules/better-docs
+jsdoc your-documented-file.js -t ./node_modules/better-docs-zh
 ```
 
 ## 使用 npm 和配置文件
@@ -57,7 +57,7 @@ jsdoc your-documented-file.js -t ./node_modules/better-docs
 
 ```json
 "opts": {
-  "template": "node_modules/better-docs"
+  "template": "node_modules/better-docs-zh"
 }
 ```
 
@@ -75,7 +75,7 @@ better-docs 有一个插件，允许您从 TypeScript 代码生成文档。
     "allowUnknownTags": ["optional"] //or true
 },
 "plugins": [
-    "node_modules/better-docs/typescript"
+    "node_modules/better-docs-zh/typescript"
 ],
 "source": {
     "includePattern": "\\.(jsx|js|ts|tsx)$",
@@ -85,24 +85,23 @@ better-docs 有一个插件，允许您从 TypeScript 代码生成文档。
 
 现在，您可以运行命令 `jsdoc` 并解析 TypeScript 文件。
 
-## How it works?
+## 它是如何工作的？
 
-It performs 4 operations:
+它执行 4 个操作：
 
-* First of all it transpiles all .ts and .tsx files to .js, so that all comments used by you are treated
-as a regular JSDoc comments.
+* 首先，它将所有 .ts 和 .tsx 文件转译为 .js，以便您使用的所有注释都被视为常规的 JSDoc 注释。
 
-Furthermore it:
+此外，它还会：
 
-* Converts all your commented `type` aliases to `@typedef`
-* Converts all your commented `interface` definitions to `@interface`,
-* Converts descriptions for your public, protected, static class members
+* 将所有注释了 `type` 的别名转为 `@typedef`
+* 将所有注释了 `interface` 的定义转换为 `@interface`
+* 转换类成员的修饰符，包括：`public`、`protected`、`static`
 
-so they can be printed by JSDoc automatically.
+因此，JSDoc 可以自动打印它们。
 
-## Examples
+## 示例
 
-```
+```javascript
 /**
  * ActionRequest
  * @memberof Action
@@ -131,9 +130,9 @@ export type ActionRequest = {
 }
 ```
 
-is converted to:
+转换为：
 
-```
+```javascript
 /**
  * ActionRequest'
  * @memberof Action'
@@ -147,9 +146,9 @@ is converted to:
  */
 ```
 
-Also you can comment the interface in a similar fashion:
+您也可以以类似的方式注释接口：
 
-```
+```javascript
 /**
  * JSON representation of an {@link Action}
  * @see Action
@@ -187,9 +186,9 @@ export default interface ActionJSON {
 }
 ```
 
-or describe your class properties like that:
+或者像这样描述你的类属性：
 
-```
+```javascript
 /**
  * Class name
  */
@@ -215,28 +214,28 @@ class ClassName {
 }
 ```
 
-# @category plugin
+# @category 插件
 
-better-docs also allows you to nest your documentation into categories and subcategories in the sidebar menu.
+better-docs 还允许您将文档嵌套到侧边栏菜单中的类别和子类别中。
 
-## Usage
+## 用法
 
-To add a plugin - update `plugins` section in your `jsdoc.json` file:
+在 `jsdoc.json` 文件中添加插件 - 更新 `plugins` 部分：
 
-```
+```json
 ...
 "tags": {
     "allowUnknownTags": ["category"] //or true
 },
 "plugins": [
-    "node_modules/better-docs/category"
+    "node_modules/better-docs-zh/category"
 ],
 ...
 ```
 
-and then you can use `@category` and/or `@subcategory` tag in your code:
+然后，您可以在代码中使用 `@category` 和/或 `@subcategory` 标记：
 
-```
+```javascript
 /**
  * Class description
  * @category Category
@@ -247,28 +246,28 @@ class YourClass {
 }
 ```
 
-# @component plugin [BETA]
+# @component 插件 [BETA]
 
-Better-docs also allows you to document your [React](https://reactjs.org/) and [Vue](https://vuejs.org/) components automatically. The only thing you have to do is to add a `@component` tag. It will take all props from your components and along with an `@example` tag - will generate a __live preview__.
+Better-docs 还可以自动为您的 [React](https://reactjs.org/) 和 [Vue](https://vuejs.org/) 组件生成文档。您唯一需要做的就是添加一个 `@component` 标签。它将从您的组件中获取所有属性，并带有一个 `@example` 标签 - 将生成一个 __实时预览__。
 
-## Installation instructions
+## 安装说明
 
-Similar as before to add a plugin - you have to update the `plugins` section in your `jsdoc.json` file:
+与之前添加插件类似 - 您必须更新 `jsdoc.json` 文件中的 `plugins` 部分：
 
-```
+```json
 ...
 "tags": {
     "allowUnknownTags": ["component"] //or true
 },
 "plugins": [
-    "node_modules/better-docs/component"
+    "node_modules/better-docs-zh/component"
 ],
 ...
 ```
 
-Since __component__ plugin uses [parcel](https://parceljs.org) as a bundler you have to install it globally. To do this run:
+由于 __component__ 插件使用 [parcel](https://parceljs.org) 作为打包器，因此您必须全局安装它。为此，请运行：
 
-```
+```sh
 # if you use npm
 npm install -g parcel-bundler
 
@@ -276,9 +275,9 @@ npm install -g parcel-bundler
 yarn global add parcel-bundler
 ```
 
-## Usage
+## 用法
 
-To document components simply add `@component` in your JSDoc documentation:
+要在您的 JSDoc 文档中记录组件，只需添加 `@component`：
 
 ```jsx
 /**
@@ -303,9 +302,9 @@ Documented.propTypes = {
 export default Documented
 ```
 
-The plugin will take the information from your [PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html) and put them into an array.
+该插件将从您的 [PropTypes](https://reactjs.org/docs/typechecking-with-proptypes.html) 中获取信息，并将它们放入数组中。
 
-For Vue it looks similar:
+对于 Vue，它看起来类似：
 
 ```vue
 <script>
@@ -328,13 +327,13 @@ export default {
 </script>
 ```
 
-In this case, props will be taken from `props` property.
+在这种情况下，属性将从 `props` 中获取。
 
-## Preview
+## 预览
 
-`@component` plugin also modifies the behaviour of `@example` tag in a way that it can generate an actual __component preview__. What you have to do is to add an `@example` tag and return component from it:
+`@component` 插件还会修改 `@example` 标签的行为，以便它可以生成实际的 __组件预览__。你要做的就是添加一个 `@example` 标签，并从中返回组件：
 
-**React example:**
+**React 示例：**
 
 ```jsx
 /**
@@ -352,7 +351,7 @@ const Documented = (props) => {
 }
 ```
 
-**Vue example 1:**
+**Vue 示例1：**
 
 ```vue
 <script>
@@ -368,7 +367,7 @@ export default {
 </script>
 ```
 
-**Vue example 2:**
+**Vue 示例2:**
 
 ```vue
 <script>
@@ -392,7 +391,7 @@ export default {
 </script>
 ```
 
-You can put as many `@example` tags as you like in one component and "caption" each of them like this:
+您可以在一个组件中放置任意数量的 `@example` 标签，并像这样“描述”每个标签：
 
 ```javascript
 /**
@@ -402,9 +401,9 @@ You can put as many `@example` tags as you like in one component and "caption" e
  */
 ```
 
-## Mixing components in preview
+## 在预览中混合组件
 
-Also you can use multiple components which are documented with `@component` tag together. So lets say you have 2 components and in the second component you want to use the first one as a wrapper like this:
+此外，您也可以使用 `@component` 标签来同时记录多个组件。因此，假设您有 2 个组件，在第二个组件中，您希望将第一个组件用作包装器，如下所示：
 
 ```javascript
 // component-1.js
@@ -430,11 +429,9 @@ const Component1 = (props) => {...}
 const Component2 = (props) => {...}
 ```
 
-## Wrapper component [only React]
+## 包装器组件 [仅限 React]
 
-Most probably your components will have to be run within a particular context, like within redux store provider or with custom CSS libraries.
-You can simulate this by passing a `component.wrapper` in your `jsdoc.json`:
-_(To read more about passing options - scroll down to __Customization__ section)_
+最有可能的是，您的组件必须在特定的上下文中运行，比如在 redux store provider 中或使用自定义 CSS 库。您可以通过向 `jsdoc.json` 文件中的 `component.wrapper` 传递选项来模拟 _（要阅读有关选项的更多信息 - 向下滚动到 __自定义__ 部分）_
 
 ```json
 // jsdoc.json
@@ -452,7 +449,7 @@ _(To read more about passing options - scroll down to __Customization__ section)
 }
 ```
 
-Wrapper component can look like this:
+包装器组件可以如下所示：
 
 ```javascript
 // wrapper-component.js
@@ -481,7 +478,7 @@ const Component = (props) => {
 export default Component
 ```
 
-## Styling React examples
+## 样式化 React 示例
 
 Better-docs inserts all examples within an `iframe`. This results in the following styling options:
 
@@ -569,7 +566,7 @@ Example configuration file with settings for both `default` and `better-docs` te
     "plugins": [
         "plugins/markdown",
         "jsdoc-mermaid",
-        "node_modules/better-docs/category"
+        "node_modules/better-docs-zh/category"
     ],
     "opts": {
         "encoding": "utf8",
@@ -619,15 +616,15 @@ Example configuration file with settings for both `default` and `better-docs` te
 
 better-docs also has one extra plugin for handling typescript'like types imports like (it has to be one-liner):
 
-```
+```javascript
 /** @typedef {import('./some-other-file').ExportedType} ExportedType */
 ```
 
 It simply removes that from the code so JSDoc wont throw an error. In order to use it add this plugin to your plugins section:
 
-```
+```json
   "plugins": [
-        "node_modules/better-docs/typedef-import"
+        "node_modules/better-docs-zh/typedef-import"
     ],
 ```
 
@@ -637,20 +634,20 @@ If you want to change the theme locally follow the steps:
 
 1. Clone the repo to the folder where you have the project:
 
-```
+```sh
 cd your-project
-git clone git@github.com:SoftwareBrothers/better-docs.git
+git clone git@github.com:atypiape/better-docs.git
 ```
 
 or add it as a git submodule:
 
-```
-git submodule add git@github.com:SoftwareBrothers/better-docs.git
+```sh
+git submodule add git@github.com:atypiape/better-docs.git
 ```
 
 2. Install the packages
 
-```
+```sh
 cd better-docs
 
 npm install
