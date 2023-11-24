@@ -1,6 +1,8 @@
 <img src="./readme/logo.png" />
 
-基于 JSDoc3 的 **javascript** / **typescript** 项目的文档工具箱，带有 **@category**、**@component** 和 **@optional** 插件。
+基于 JSDoc3 的 **Javascript** / **Typescript** 项目文档工具箱，带有 **@category**、**@component** 和 **@optional** 插件。译者亲测，兼容 JSDoc4。（Fork 自 [SoftwareBrothers](https://github.com/SoftwareBrothers) 的 [Better-Docs](https://github.com/SoftwareBrothers/better-docs)）
+
+
 
 它长这样：
 
