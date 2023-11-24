@@ -3,8 +3,8 @@
 ?>
 <div class="columns">
     <?js if (data.description && data.type && data.type.names) { ?>
-    <div class='param-desc column is-7'><?js= description ?></div>
-    <div class='column is-5 has-text-left'>
+    <div class='param-desc column is-8'><?js= description ?></div>
+    <div class='column is-4 has-text-left'>
         <label>类型: </label><?js= this.partial('type.tmpl', data.type.names) ?>
     </div>
     <?js } else { ?>

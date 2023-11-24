@@ -39,8 +39,8 @@ var self = this;
 
 <?js if (data.augments && data.alias && data.alias.indexOf('module:') === 0) { ?>
     <div class="method-parameter columns">
-        <div class="column is-2"><label>Extends:</label></div>
-        <div class="column is-10">
+        <div class="column is-1"><label>扩展:</label></div>
+        <div class="column is-11">
             <?js= self.partial('augments.tmpl', data) ?>
         </div>
     </div>
@@ -69,8 +69,8 @@ var self = this;
 
 <?js if (data.kind !== 'module' && data.requires && data.requires.length) { ?>
     <div class="method-parameter columns">
-        <div class="column is-2"><label>Requires:</label></div>
-        <div class="column is-10">
+        <div class="column is-1"><label>必要:</label></div>
+        <div class="column is-11">
             <ul><?js data.requires.forEach(function(r) { ?>
                 <li><?js= self.linkto(r) ?></li>
             <?js }); ?></ul>
@@ -80,8 +80,8 @@ var self = this;
 
 <?js if (data.fires && fires.length) { ?>
     <div class="method-parameter columns">
-        <div class="column is-2"><label>Fires:</label></div>
-        <div class="column is-10">
+        <div class="column is-1"><label>触发:</label></div>
+        <div class="column is-11">
             <ul><?js fires.forEach(function(f) { ?>
                 <li><?js= self.linkto(f) ?></li>
             <?js }); ?></ul>
@@ -92,7 +92,7 @@ var self = this;
 
 <?js if (data.listens && listens.length) { ?>
     <div class="method-parameter columns">
-        <div class="column is-2"><label>Listens to Events:</label></div>
+        <div class="column is-2"><label>监听事件:</label></div>
         <div class="column is-10">
             <ul><?js listens.forEach(function(f) { ?>
                 <li><?js= self.linkto(f) ?></li>
@@ -105,7 +105,7 @@ var self = this;
 
 <?js if (data.listeners && listeners.length) { ?>
     <div class="method-parameter columns">
-        <div class="column is-2"><label>Listeners of This Event:</label></div>
+        <div class="column is-2"><label>监听该事件:</label></div>
         <div class="column is-10">
             <ul><?js listeners.forEach(function(f) { ?>
                 <li><?js= self.linkto(f) ?></li>
@@ -116,8 +116,8 @@ var self = this;
 
 <?js if (data.modifies && modifies.length) {?>
     <div class='columns method-parameter'>
-        <div class="column is-2"><label>Modifies:</label></div>
-        <div class="column is-10">
+        <div class="column is-1"><label>修改:</label></div>
+        <div class="column is-11">
             <?js
                 modifies.forEach(function(m) { ?>
                     <?js= self.partial('modifies.tmpl', m) ?>
@@ -129,8 +129,8 @@ var self = this;
 
 <?js if (data.exceptions && exceptions.length) { ?>
     <div class='columns method-parameter'>
-        <div class="column is-2"><label>Throws:</label></div>
-        <div class="column is-10">
+        <div class="column is-1"><label>异常:</label></div>
+        <div class="column is-11">
             <?js
                 exceptions.forEach(function(r) { ?>
                     <?js= self.partial('exceptions.tmpl', r) ?>
@@ -142,8 +142,8 @@ var self = this;
 
 <?js if (data.returns && returns.length) { ?>
     <div class='columns method-parameter'>
-        <div class="column is-2"><label>返回:</label></div>
-        <div class="column is-10">
+        <div class="column is-1"><label>返回:</label></div>
+        <div class="column is-11">
             <?js
                 returns.forEach(function(r) { ?>
                     <?js= self.partial('returns.tmpl', r) ?>
@@ -154,8 +154,8 @@ var self = this;
 <?js} ?>
 <?js if (data.yields && yields.length) { ?>
     <div class='columns method-parameter'>
-        <div class="column is-2"><label>Yields:</label></div>
-        <div class="column is-10">
+        <div class="column is-1"><label>Yields:</label></div>
+        <div class="column is-11">
             <?js
                 yields.forEach(function(r) { ?>
                     <?js= self.partial('returns.tmpl', r) ?>
