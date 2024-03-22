@@ -182,7 +182,7 @@
         if (members && members.length && members.forEach) {
     ?>
         <div class='vertical-section'>
-            <h1>成员</h1>
+            <h1>成员 (Members)</h1>
             <div class="members">
             <?js members.forEach(function(p) { ?>
                 <div class="member"><?js= self.partial('members.tmpl', p) ?></div>
@@ -203,7 +203,7 @@
             }, [])
     ?>
         <div class='vertical-section'>
-            <h1>方法</h1>
+            <h1>方法 (Methods)</h1>
             <div class="members">
             <?js methods.forEach(function(m) { ?>
                 <div class="member"><?js= self.partial('method.tmpl', m) ?></div>
@@ -217,7 +217,7 @@
         if (typedefs && typedefs.length && typedefs.forEach) {
     ?>
         <div class='vertical-section'>
-            <h1>类型定义</h1>
+            <h1>类型 (Types)</h1>
             <div class="members">
             <?js typedefs.forEach(function(e) {
                 if (e.signature) {
@@ -240,7 +240,7 @@
         if (events && events.length && events.forEach) {
     ?>
         <div class='vertical-section'>
-            <h1>事件</h1>
+            <h1>事件 (Events)</h1>
             <div class="members">
             <?js events.forEach(function(e) { ?>
                 <div class="member">

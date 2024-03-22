@@ -1,13 +1,13 @@
 /**
  * Class with load feature
  *
- * @load ./docs/description.md
+ * @load ./description.md
  */
 class ClassWithLoad {
   /**
    * Save method
    *
-   * @load ./docs/save.md
+   * @load ./save.md
    */
   save() {
 

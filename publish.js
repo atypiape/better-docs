@@ -397,14 +397,14 @@ function buildGroupNav (members, title) {
     nav += '<h2>' + title + '</h2>'
   }
   nav += buildMemberNav(members.tutorials || [], '教程', seenTutorials, linktoTutorial)
-  nav += buildMemberNav(members.modules || [], '模块', {}, linkto)
-  nav += buildMemberNav(members.externals || [], '外部', seen, linktoExternal)
-  nav += buildMemberNav(members.namespaces || [], '命名空间', seen, linkto)
-  nav += buildMemberNav(members.classes || [], '类', seen, linkto)
-  nav += buildMemberNav(members.interfaces || [], '接口', seen, linkto)
-  nav += buildMemberNav(members.events || [], '事件', seen, linkto)
-  nav += buildMemberNav(members.mixins || [], '混合', seen, linkto)
-  nav += buildMemberNav(members.components || [], '组件', seen, linkto)
+  nav += buildMemberNav(members.modules || [], '模块 (module)', {}, linkto)
+  nav += buildMemberNav(members.externals || [], '外部 (external)', seen, linktoExternal)
+  nav += buildMemberNav(members.namespaces || [], '命名空间 (namespace)', seen, linkto)
+  nav += buildMemberNav(members.classes || [], '类 (class)', seen, linkto)
+  nav += buildMemberNav(members.interfaces || [], '接口 (interface)', seen, linkto)
+  nav += buildMemberNav(members.events || [], '事件 (event)', seen, linkto)
+  nav += buildMemberNav(members.mixins || [], '混合 (mixin)', seen, linkto)
+  nav += buildMemberNav(members.components || [], '组件 (component)', seen, linkto)
     
   if (members.globals && members.globals.length) {
     globalNav = ''
@@ -418,10 +418,10 @@ function buildGroupNav (members, title) {
 
     if (!globalNav) {
       // turn the heading into a link so you can actually get to the global page
-      nav += '<h3>' + linkto('global', '全局') + '</h3>'
+      nav += '<h3>' + linkto('global', '全局 (global)') + '</h3>'
     }
     else {
-      nav += '<h3>全局</h3><ul>' + globalNav + '</ul>'
+      nav += '<h3>全局 (global)</h3><ul>' + globalNav + '</ul>'
     }
   }
   nav += '</div>'
@@ -721,7 +721,7 @@ exports.publish = function(taffyData, opts, tutorials) {
     generateSourceFiles(sourceFiles, opts.encoding)
   }
 
-  if (members.globals.length) { generate('全局', null, [{kind: 'globalobj'}], globalUrl) }
+  if (members.globals.length) { generate(null, '全局 (global)', [{kind: 'globalobj'}], globalUrl) }
 
   // index page displays information from package.json and lists files
   files = find({kind: 'file'})
@@ -755,31 +755,31 @@ exports.publish = function(taffyData, opts, tutorials) {
     var myComponents = helper.find(components, {longname: longname})
 
     if (myModules.length) {
-      generate(myModules[0].name, '模块', myModules,  helper.longnameToUrl[longname])
+      generate(myModules[0].name, '模块 (module)', myModules,  helper.longnameToUrl[longname])
     }
 
     if (myClasses.length) {
-      generate(myClasses[0].name, '类', myClasses, helper.longnameToUrl[longname])
+      generate(myClasses[0].name, '类 (class)', myClasses, helper.longnameToUrl[longname])
     }
 
     if (myNamespaces.length) {
-      generate(myNamespaces[0].name, '命名空间', myNamespaces, helper.longnameToUrl[longname])
+      generate(myNamespaces[0].name, '命名空间 (namespace)', myNamespaces, helper.longnameToUrl[longname])
     }
 
     if (myMixins.length) {
-      generate(myMixins[0].name, '混合', myMixins, helper.longnameToUrl[longname])
+      generate(myMixins[0].name, '混合 (mixin)', myMixins, helper.longnameToUrl[longname])
     }
 
     if (myExternals.length) {
-      generate(myExternals[0].name, '外部', myExternals, helper.longnameToUrl[longname])
+      generate(myExternals[0].name, '外部 (external)', myExternals, helper.longnameToUrl[longname])
     }
 
     if (myInterfaces.length) {
-      generate(myInterfaces[0].name, '接口', myInterfaces, helper.longnameToUrl[longname])
+      generate(myInterfaces[0].name, '接口 (interface)', myInterfaces, helper.longnameToUrl[longname])
     }
 
     if (myComponents.length) {
-      generate(myComponents[0].name, '组件', myComponents, helper.longnameToUrl[longname])
+      generate(myComponents[0].name, '组件 (component)', myComponents, helper.longnameToUrl[longname])
     }
   })
 

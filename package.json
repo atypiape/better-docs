@@ -1,6 +1,6 @@
 {
   "name": "better-docs-zh",
-  "version": "2.7.4",
+  "version": "2.7.4-zh.1",
   "description": "JSdoc 汉化主题",
   "main": "publish.js",
   "publishConfig": {
@@ -41,6 +41,7 @@
   "author": "Wojciech Krysiak",
   "license": "MIT",
   "dependencies": {
+    "@jsdoc/salty": "^0.2.7",
     "brace": "^0.11.1",
     "react-ace": "^9.5.0",
     "react-docgen": "^5.4.0",
