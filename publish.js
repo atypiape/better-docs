@@ -421,7 +421,9 @@ function buildGroupNav (members, title) {
       nav += '<h3>' + linkto('global', '全局 (global)') + '</h3>'
     }
     else {
-      nav += '<h3>全局 (global)</h3><ul>' + globalNav + '</ul>'
+      const hidden = env.conf?.sidebar?.global?.hideItems === true;
+      nav += '<h3><a href="global.html">全局 (global)</a></h3><ul>'
+      nav += (hidden ? '' : globalNav) + '</ul>'
     }
   }
   nav += '</div>'

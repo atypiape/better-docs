@@ -622,6 +622,11 @@ Example configuration file with settings for both `default` and `better-docs` te
                 }
             ]
         }
+    },
+    "sidebar": {
+        "global": {
+            "hideItems": true
+        }
     }
 }
 ```

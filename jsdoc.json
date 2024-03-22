@@ -31,5 +31,10 @@
         "better-docs": {
             "name": "Sample Documentation"
         }
+    },
+    "sidebar": {
+        "global": {
+            "hideItems": true
+        }
     }
 }
