@@ -445,7 +445,7 @@ function buildGroupNav (members, title) {
  */
 function buildNav(members, navTypes = null, betterDocs) {
   const href = betterDocs.landing ? 'docs.html' : 'index.html'
-  var nav = navTypes ? '' : `<h2><a href="${href}">文档</a></h2>`
+  var nav = navTypes ? '' : `<h2><a href="${href}">指南</a></h2>`
 
   var categorised = {}
   var rootScope = {}
