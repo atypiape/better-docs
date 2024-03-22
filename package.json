@@ -1,6 +1,6 @@
 {
   "name": "better-docs-zh",
-  "version": "2.7.4-zh.2",
+  "version": "2.7.4-zh.3",
   "description": "JSdoc 汉化主题",
   "main": "publish.js",
   "publishConfig": {
